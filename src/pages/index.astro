@@ -1,0 +1,21 @@
+---
+// Astro component script (runs on the server)
+import Layout from '../layouts/Layout.astro';
+import RelaunchManager from '../components/RelaunchManager.tsx';
+---
+
+<Layout title="Website Relaunch Manager">
+  <RelaunchManager client:load />
+</Layout>
+
+<script>
+  import { createRoot } from 'react-dom/client';
+  import RelaunchManager from '../components/RelaunchManager.tsx';
+  import React from 'react';
+
+  const container = document.getElementById('relaunch-app');
+  if (container) {
+    const root = createRoot(container);
+    root.render(React.createElement(RelaunchManager));
+  }
+</script> 
